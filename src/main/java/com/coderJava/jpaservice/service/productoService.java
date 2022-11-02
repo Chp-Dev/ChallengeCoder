@@ -1,9 +1,8 @@
 package com.coderJava.jpaservice.service;
 
-import com.coderJava.jpaservice.controller.ResourceNotFoundException;
-import com.coderJava.jpaservice.model.Cliente;
-import com.coderJava.jpaservice.model.Producto;
-import com.coderJava.jpaservice.repository.ProductoRepository;
+import com.coderJava.jpaservice.controller.resourceNotFoundException;
+import com.coderJava.jpaservice.model.producto;
+import com.coderJava.jpaservice.repository.productoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,11 +13,11 @@ import java.util.Optional;
 public class productoService {
 
     @Autowired
-    private ProductoRepository pr;
+    private productoRepository pr;
 
 
-    public Producto create (Producto newProduct){
-        Producto p = new Producto();
+    public producto create (producto newProduct){
+        producto p = new producto();
         p.setDescripcion(newProduct.getDescripcion());
         p.setPrecioCompra(newProduct.getPrecioCompra());
         p.setPrecioVenta(newProduct.getPrecioVenta());
@@ -26,31 +25,28 @@ public class productoService {
         return this.pr.save(p);
     }
 
-    public List<Producto> findAll(){
+    public List<producto> findAll(){
         return this.pr.findAll();
     }
 
 
-    public Producto update (Producto p, Long id) throws ResourceNotFoundException {
-        Optional<Producto> pb = this.pr.findById(id);
+    public producto update (producto p, Long id) throws resourceNotFoundException {
+        Optional<producto> pb = this.pr.findById(id);
         if (pb.isPresent()){
-            Producto newP = pb.get();
+            producto newP = pb.get();
             newP.setDescripcion(p.getDescripcion());
             newP.setPrecioCompra(p.getPrecioCompra());
             newP.setPrecioVenta(p.getPrecioVenta());
             newP.setStock(p.getStock());
             return this.pr.save(newP);
         }else{
-            throw new ResourceNotFoundException("El producto no existe");
+            throw new resourceNotFoundException("El producto no existe");
         }
     }
 
-    public boolean delet(Long id){
-        try {
-            pr.deleteById(id);
-            return true;
-        }catch (Exception err){
-            return false;
-        }
+    public void delet(Long id){
+        pr.deleteById(id);
     }
+
+
 }

@@ -1,7 +1,7 @@
 package com.coderJava.jpaservice.controller;
 
 
-import com.coderJava.jpaservice.model.Producto;
+import com.coderJava.jpaservice.model.producto;
 import com.coderJava.jpaservice.service.productoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -17,29 +17,27 @@ public class productosController {
     private productoService ps;
 
     @PostMapping("/")
-    public ResponseEntity<Producto> create (@RequestBody Producto p){
+    public ResponseEntity<producto> create (@RequestBody producto p){
         return new ResponseEntity<>(this.ps.create(p), HttpStatus.OK);
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<Producto>>finAll(){
+    public ResponseEntity<List<producto>>finAll(){
         return new ResponseEntity<>(this.ps.findAll(), HttpStatus.OK);
     }
 
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<Producto> update (@RequestBody Producto pUpdate, @PathVariable("id") Long id) throws ResourceNotFoundException{
+    public ResponseEntity<producto> update (@RequestBody producto pUpdate, @PathVariable("id") Long id) throws resourceNotFoundException {
         return new ResponseEntity<>(this.ps.update(pUpdate, id), HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/{id}")
-    public String deletId(@PathVariable("id") Long id){
-        boolean yes = this.ps.delet(id);
-        if (yes){
-            return "Se elimino el producto con ID " + id;
-        }else {
-            return "No puedo eliminar el producto con ID " + id;
-        }
+    public ResponseEntity delet(@PathVariable("id") Long id){
+        ps.delet(id);
+        return ResponseEntity.ok().build();
     }
+
+
 
 }

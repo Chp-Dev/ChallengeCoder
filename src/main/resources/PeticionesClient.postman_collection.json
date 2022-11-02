@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "24f1e0ca-fa2f-491f-b34b-a78059fdf68e",
+		"name": "PeticionesClient",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22916650"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9500/api/client/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n    {\r\n        \"apellido\": \"Rodriguez\",\r\n        \"nombre\": \"Eduardo\",\r\n        \"dni\": \"45697123\", \r\n        \"fechaNacimiento\": \"2007-09-04\"\r\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9500/api/client/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"client",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9500/api/client/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9500/api/client/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"client",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9500/api/client/1",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n        \"apellido\": \"Fernandez\",\r\n        \"nombre\": \"Alberto\",\r\n        \"dni\": \"19754326\",\r\n        \"fechaNacimiento\": \"1967-08-06\",\r\n        \"productos\": []\r\n    },",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9500/api/client/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"client",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9500/api/client/5",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9500/api/client/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"client",
+						"5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "2912c236-319f-4f4f-9039-e67c4ff2b17c",
+		"name": "PeticionesProduct",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22916650"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9500/api/product/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"descripcion\": \"Lapicera\",\r\n    \"precioCompra\": 20.00,\r\n    \"productoVenta\": 23.30,\r\n    \"stock\": 250\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9500/api/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9500/api/product/",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9500/api/product/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"product",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9500/api/product/7",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9500/api/product/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"product",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9500/api/product/10",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": " {\r\n       \"descripcion\": \"Cuaderno\",\r\n        \"precioCompra\": 120.0,\r\n        \"precioVenta\": 156.0,\r\n        \"stock\": 80,\r\n        \"cliente\": null,\r\n        \"ventas\": []\r\n }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9500/api/product/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"product",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

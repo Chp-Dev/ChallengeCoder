@@ -8,7 +8,7 @@ import java.time.LocalDate;
 @Data
 @Entity
 @Table(name = "ventas")
-public class Ventas {
+public class ventas {
     @Id
     @GeneratedValue
     private Long id;
@@ -19,7 +19,7 @@ public class Ventas {
 
     @ManyToOne
     @JoinColumn(name = "producto_id")
-    private Producto producto;
+    private com.coderJava.jpaservice.model.producto producto;
 
 
 }

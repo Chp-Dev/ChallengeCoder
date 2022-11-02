@@ -9,7 +9,7 @@ import java.util.List;
 @Data
 @Entity
 @Table(name = "cliente")
-public class Cliente {
+public class cliente {
     @Id
     @GeneratedValue
     private Long id;
@@ -24,7 +24,7 @@ public class Cliente {
 
 
     @OneToMany(mappedBy = "cliente")
-    private List<Producto> productos;
+    private List<producto> productos;
 
 
 }
