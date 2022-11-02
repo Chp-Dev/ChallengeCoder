@@ -1,8 +1,8 @@
 package com.coderJava.jpaservice.service;
 
-import com.coderJava.jpaservice.controller.resourceNotFoundException;
-import com.coderJava.jpaservice.model.cliente;
-import com.coderJava.jpaservice.repository.clienteRepository;
+import com.coderJava.jpaservice.controller.ResourceNotFoundException;
+import com.coderJava.jpaservice.model.Cliente;
+import com.coderJava.jpaservice.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +10,13 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class clienteService {
+public class ClienteService {
 
     @Autowired
-    private clienteRepository cr;
+    private ClienteRepository cr;
 
-    public cliente create (cliente newClient){
-        cliente c = new cliente();
+    public Cliente create (Cliente newClient){
+        Cliente c = new Cliente();
         c.setApellido(newClient.getApellido());
         c.setNombre(newClient.getNombre());
         c.setDni(newClient.getDni());
@@ -24,22 +24,22 @@ public class clienteService {
         return this.cr.save(c);
     }
 
-    public List<cliente> findAll(){
+    public List<Cliente> findAll(){
         return this.cr.findAll();
     }
 
 
-    public cliente update (cliente c, Long id) throws resourceNotFoundException {
-        Optional<cliente> cb = this.cr.findById(id);
+    public Cliente update (Cliente c, Long id) throws ResourceNotFoundException {
+        Optional<Cliente> cb = this.cr.findById(id);
         if (cb.isPresent()){
-            cliente newC = cb.get();
+            Cliente newC = cb.get();
             newC.setApellido(c.getApellido());
             newC.setNombre(c.getNombre());
             newC.setDni(c.getDni());
             newC.setFechaNacimiento(c.getFechaNacimiento());
             return this.cr.save(newC);
         }else{
-            throw new resourceNotFoundException("El cliente no existe");
+            throw new ResourceNotFoundException("El Cliente no existe");
         }
     }
 

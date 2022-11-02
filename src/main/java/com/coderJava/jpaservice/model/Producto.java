@@ -7,8 +7,8 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "producto")
-public class producto {
+@Table(name = "Producto")
+public class Producto {
     @Id
     @GeneratedValue
     private Long id;
@@ -23,9 +23,9 @@ public class producto {
 
     @ManyToOne
     @JoinColumn(name = "cliente_id")
-    private com.coderJava.jpaservice.model.cliente cliente;
+    private Cliente cliente;
     @OneToMany(mappedBy = "producto")
-    private List<com.coderJava.jpaservice.model.ventas> ventas;
+    private List<Ventas> ventas;
 
 
 }

@@ -1,8 +1,8 @@
 package com.coderJava.jpaservice.controller;
 
 
-import com.coderJava.jpaservice.model.cliente;
-import com.coderJava.jpaservice.service.clienteService;
+import com.coderJava.jpaservice.model.Cliente;
+import com.coderJava.jpaservice.service.ClienteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,24 +12,24 @@ import java.util.List;
 
 @RequestMapping(path = "api/client")
 @RestController
-public class clienteController {
+public class ClienteController {
 
     @Autowired
-    private clienteService cs;
+    private ClienteService cs;
 
     @PostMapping("/")
-    public ResponseEntity<cliente> create (@RequestBody cliente c){
+    public ResponseEntity<Cliente> create (@RequestBody Cliente c){
         return new ResponseEntity<>(this.cs.create(c), HttpStatus.OK);
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<cliente>>finAll(){
+    public ResponseEntity<List<Cliente>>finAll(){
         return new ResponseEntity<>(this.cs.findAll(), HttpStatus.OK);
     }
 
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<cliente> update (@RequestBody cliente cUpdate, @PathVariable Long id) throws resourceNotFoundException {
+    public ResponseEntity<Cliente> update (@RequestBody Cliente cUpdate, @PathVariable Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(this.cs.update(cUpdate, id), HttpStatus.OK);
     }
 

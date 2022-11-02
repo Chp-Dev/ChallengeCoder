@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
-public class controllerExcepsion {
+public class ControllerExcepsion {
 
-    @ExceptionHandler(resourceNotFoundException.class)
+    @ExceptionHandler(ResourceNotFoundException.class)
     public ResponseEntity<String>ResourceNotFoundException(Exception ex){
         return new ResponseEntity<>("Lo que buscas no existe",HttpStatus.NOT_FOUND);
     }

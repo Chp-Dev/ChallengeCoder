@@ -1,8 +1,8 @@
 package com.coderJava.jpaservice.controller;
 
 
-import com.coderJava.jpaservice.model.producto;
-import com.coderJava.jpaservice.service.productoService;
+import com.coderJava.jpaservice.model.Producto;
+import com.coderJava.jpaservice.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,24 +11,24 @@ import java.util.List;
 
 @RequestMapping(path = "api/product")
 @RestController
-public class productosController {
+public class ProductosController {
 
     @Autowired
-    private productoService ps;
+    private ProductoService ps;
 
     @PostMapping("/")
-    public ResponseEntity<producto> create (@RequestBody producto p){
+    public ResponseEntity<Producto> create (@RequestBody Producto p){
         return new ResponseEntity<>(this.ps.create(p), HttpStatus.OK);
     }
 
     @GetMapping("/")
-    public ResponseEntity<List<producto>>finAll(){
+    public ResponseEntity<List<Producto>>finAll(){
         return new ResponseEntity<>(this.ps.findAll(), HttpStatus.OK);
     }
 
 
     @PutMapping(path = "/{id}")
-    public ResponseEntity<producto> update (@RequestBody producto pUpdate, @PathVariable("id") Long id) throws resourceNotFoundException {
+    public ResponseEntity<Producto> update (@RequestBody Producto pUpdate, @PathVariable("id") Long id) throws ResourceNotFoundException {
         return new ResponseEntity<>(this.ps.update(pUpdate, id), HttpStatus.OK);
     }
 
