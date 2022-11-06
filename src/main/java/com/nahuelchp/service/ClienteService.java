@@ -1,8 +1,8 @@
-package com.coderJava.jpaservice.service;
+package com.nahuelchp.service;
 
-import com.coderJava.jpaservice.controller.ResourceNotFoundException;
-import com.coderJava.jpaservice.model.Cliente;
-import com.coderJava.jpaservice.repository.ClienteRepository;
+import com.nahuelchp.exception.ResourceNotFoundException;
+import com.nahuelchp.model.Cliente;
+import com.nahuelchp.repository.ClienteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -44,8 +44,12 @@ public class ClienteService {
     }
 
 
-    public void delet(Long id){
-        cr.deleteById(id);
+    public void delete(Long id) throws ResourceNotFoundException {
+        try{
+            cr.deleteById(id);
+        }catch (Exception e){
+            throw new ResourceNotFoundException("El Cliente no existe");
+        }
     }
 
 

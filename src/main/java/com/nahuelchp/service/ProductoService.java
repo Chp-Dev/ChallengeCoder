@@ -1,11 +1,12 @@
-package com.coderJava.jpaservice.service;
+package com.nahuelchp.service;
 
-import com.coderJava.jpaservice.controller.ResourceNotFoundException;
-import com.coderJava.jpaservice.model.Producto;
-import com.coderJava.jpaservice.repository.ProductoRepository;
+import com.nahuelchp.exception.ResourceNotFoundException;
+import com.nahuelchp.model.Producto;
+import com.nahuelchp.repository.ProductoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 import java.util.Optional;
 
@@ -22,6 +23,7 @@ public class ProductoService {
         p.setPrecioCompra(newProduct.getPrecioCompra());
         p.setPrecioVenta(newProduct.getPrecioVenta());
         p.setStock(newProduct.getStock());
+        p.setFechaAlta(LocalDate.now());
         return this.pr.save(p);
     }
 

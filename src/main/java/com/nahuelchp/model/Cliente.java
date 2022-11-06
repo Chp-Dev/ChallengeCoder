@@ -1,4 +1,4 @@
-package com.coderJava.jpaservice.model;
+package com.nahuelchp.model;
 
 import lombok.Data;
 
@@ -8,10 +8,10 @@ import java.util.List;
 
 @Data
 @Entity
-@Table(name = "Cliente")
+@Table(name = "clientes")
 public class Cliente {
     @Id
-    @GeneratedValue
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column
     private String apellido;
@@ -21,10 +21,4 @@ public class Cliente {
     private String dni;
     @Column
     private LocalDate fechaNacimiento;
-
-
-    @OneToMany(mappedBy = "cliente")
-    private List<Producto> productos;
-
-
 }

@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+  mysql_bd:
+    image: mysql:8.0
+    environment:
+      MYSQL_DATABASE: 'coderbd'
+      MYSQL_USER: 'admin'
+      MYSQL_PASSWORD: 'admin'
+      MYSQL_ROOT_PASSWORD: 'Basededatos22?'
+    ports:
+      - '3307:3306'
+    volumes:
+      - my-db:/var/lib/mysql
+volumes:
+  my-db:

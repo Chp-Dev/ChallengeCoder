@@ -1,8 +1,9 @@
-package com.coderJava.jpaservice.controller;
+package com.nahuelchp.controller;
 
 
-import com.coderJava.jpaservice.model.Producto;
-import com.coderJava.jpaservice.service.ProductoService;
+import com.nahuelchp.exception.ResourceNotFoundException;
+import com.nahuelchp.model.Producto;
+import com.nahuelchp.service.ProductoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

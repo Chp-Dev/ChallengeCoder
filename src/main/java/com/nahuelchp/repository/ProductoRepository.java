@@ -1,6 +1,6 @@
-package com.coderJava.jpaservice.repository;
+package com.nahuelchp.repository;
 
-import com.coderJava.jpaservice.model.Producto;
+import com.nahuelchp.model.Producto;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
