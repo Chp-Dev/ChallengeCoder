@@ -1,0 +1,40 @@
+{
+	"info": {
+		"_postman_id": "a976a5eb-bedb-4d3d-92e9-895a90453f38",
+		"name": "PeticionesVentas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22916650"
+	},
+	"item": [
+		{
+			"name": "http://localhost:9500/api/comprobante/",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"cliente\": {\"id\": 1},\r\n    \"detalle\": [\r\n        {\r\n        \"cantidad\": 20,\r\n        \"producto\": {\r\n            \"id\":4\r\n            }\r\n     },\r\n       {\r\n        \"cantidad\": 1,\r\n        \"producto\": {\r\n            \"id\":37\r\n            }\r\n     },  {\r\n        \"cantidad\": 2,\r\n        \"producto\": {\r\n            \"id\":2\r\n            }\r\n     }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9500/api/comprobante/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9500",
+					"path": [
+						"api",
+						"comprobante",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
